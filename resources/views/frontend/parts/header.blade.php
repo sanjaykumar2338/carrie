@@ -18,7 +18,7 @@
 		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
        
         <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{url('/')}}/assets/css/font-awesome.min.css">
 
         <!--linear icon css-->
 		<link rel="stylesheet" href="assets/css/linearicons.css">
