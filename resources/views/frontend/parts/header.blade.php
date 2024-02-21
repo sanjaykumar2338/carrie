@@ -15,34 +15,34 @@
         <title>TrackRak.com - Rakuten Tracking and Alerts</title>
 
         <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="public/assets/logo/favicon.png"/>
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
        
         <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="public/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
         <!--linear icon css-->
-		<link rel="stylesheet" href="public/assets/css/linearicons.css">
+		<link rel="stylesheet" href="assets/css/linearicons.css">
 
 		<!--animate.css-->
-        <link rel="stylesheet" href="public/assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
 
 		<!--flaticon.css-->
-        <link rel="stylesheet" href="public/assets/css/flaticon.css">
+        <link rel="stylesheet" href="assets/css/flaticon.css">
 
 		<!--slick.css-->
-        <link rel="stylesheet" href="public/assets/css/slick.css">
-		<link rel="stylesheet" href="public/assets/css/slick-theme.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+		<link rel="stylesheet" href="assets/css/slick-theme.css">
 		
         <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		
 		<!-- bootsnav -->
-		<link rel="stylesheet" href="public/assets/css/bootsnav.css" >	
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
         
         <!--style.css-->
-        <link rel="stylesheet" href="public/assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
         
         <!--responsive.css-->
-        <link rel="stylesheet" href="public/assets/css/responsive.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
