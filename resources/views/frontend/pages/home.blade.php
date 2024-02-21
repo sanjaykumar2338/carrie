@@ -23,7 +23,7 @@
 						<div class="header-top-right">
 							<ul>
 								<li class="header-top-contact">
-									<a href="#">sign inddd</a>
+									<a href="#">sign in</a>
 								</li>
 								<li class="header-top-contact">
 									<a href="#">register</a>
