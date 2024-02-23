@@ -1,0 +1,201 @@
+[dir='rtl']{	
+	// PLACE ICON WITH BOX
+	.icon-bx-wraper {
+		&.left{
+			.icon-bx-xl,
+			.icon-bx-lg,
+			.icon-bx-md,
+			.icon-bx-sm,
+			.icon-bx-xs{
+				float: right;
+				margin-right: 0;
+				margin-left: 20px;
+			}
+			.icon-xl,
+			.icon-lg,
+			.icon-md,
+			.icon-sm,
+			.icon-xs{
+				float: right;
+				margin-right: 0;
+				margin-left: 10px;
+			}
+		}
+		&.right{
+			text-align: left;
+			.icon-bx-xl,
+			.icon-bx-lg,
+			.icon-bx-md,
+			.icon-bx-sm,
+			.icon-bx-xs{
+				float: left;
+				margin-left: 0;
+				margin-right: 20px;
+			}
+			.icon-xl,
+			.icon-lg,
+			.icon-md,
+			.icon-sm,
+			.icon-xs{
+				float: left;
+				margin-left: 0;
+				margin-right: 10px;
+			}
+		}
+		&.bx-style-2 {
+			&.center{
+				[class*="icon-bx-"] {
+					left: auto;
+					right: 50%;
+				}
+				.icon-bx-xl {
+					margin-left: 0;
+					margin-right: -75px;
+				}
+				.icon-bx-lg {
+					margin-left: 0;
+					margin-right: -60px;
+				}
+				.icon-bx-md {
+					margin-left: 0;
+					margin-right: -50px;
+				}
+				.icon-bx-sm {
+					margin-left: 0;
+					margin-right: -40px;
+				}
+				.icon-bx-xs {
+					margin-left: 0;
+					margin-right: -20px;
+				}
+			}
+			&.left{
+				[class*="icon-bx-"] {
+					left: auto;
+					right: 0;
+				}
+			}
+			&.right{ 
+				[class*="icon-bx-"] {
+					right: auto;
+					left: 0;
+				}
+			}
+		}
+	}
+	.right-border:before {
+		right: auto;
+		left: 0;
+	}
+
+	// icon-bx-wraper
+	.icon-bx-wraper{
+		&.style-1{
+			&>[class*="icon-bx-"]{
+				&:after{
+					right: auto;
+					left: -20px;
+					background-position: left;
+				}
+			}
+			//&:before{
+			//	left: auto;
+			//	right: -30px;
+			//}
+			//&:after{
+			//	right: auto;
+			//	left: -30px;
+			//}
+			&:hover,
+			&.active{
+				&>[class*="icon-bx-"]{
+					&:after{
+						right: auto;
+						left: 30px;
+					}
+				}
+			}
+		}
+		&.style-2{
+			&>[class*="icon-bx-"]{
+				&:before{
+					left: 0;
+					right: calc(50% - 82px);
+				}
+			}
+			.icon-content{
+				padding-left: 0;
+				padding-right: 20px;
+			}
+			@include respond('phone'){
+				&>[class*="icon-bx-"]{
+					&:before{
+						left: 0;
+						right: calc(50% - 63px);
+					}
+				}
+			}
+		}
+		&.style-3{
+			&:after{
+				left:auto;
+				right:0;
+			}
+			&>[class*="icon-bx-"]{
+				margin-left:0;	
+			}
+			&:hover,
+			&.active{
+				.wraper-effect{
+					right: auto;
+					left: -150px;
+				}
+			}
+			&.left{
+				.icon-content{
+					padding-left: 0;
+					padding-right: 25px;
+				}
+				@include respond('phone'){
+					padding: 30px 15px 30px 20px;
+					.icon-content{
+						padding-left: 0;
+						padding-right: 15px;
+					}
+				}
+			}
+		}
+		&.style-5{
+			.btn{
+				&:after{
+					left:auto;
+					right:0;
+				}
+			}
+			.icon-bx{
+				&:before,
+				&:after{
+					left:auto;
+					right:0;
+				}
+			}
+		}
+		&.style-6{
+			&>[class*="icon-bx-"]{
+				&:after{
+					left:auto;
+					right:0;
+				}	
+			}
+		}
+		&.style-8{
+			.icon-bx-sm{
+				&:after{
+					left:auto;
+					right:0;
+				}
+			}
+		}
+	}
+	
+}

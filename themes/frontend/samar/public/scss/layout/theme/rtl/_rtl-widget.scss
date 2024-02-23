@@ -1,0 +1,212 @@
+[dir='rtl']{
+	// Widget
+	.widget{
+		.widget-title{
+			padding-left: 0;
+			padding-right: 20px;
+			&:before{
+				left: auto;
+				right: 0;
+			}
+		}
+		&.style-1{
+			.widget-title{
+				padding-right: 0!important;
+				&:before{
+					left: auto;
+					right: 0;
+				}
+				&:after{
+					left: auto;
+					right: 32px;
+				}
+			}
+		}
+	}
+
+
+
+	// search-bx
+	.search-bx{
+		.input-group-prepend{
+			border-left: 0;
+		}
+		button{
+			right: auto;
+			left: 0;
+			border-radius: 4px 0 0 4px;
+		}
+	}
+
+	// widget_services
+	.service_menu_nav{
+		li{
+			a{
+				&:before{
+					right: auto;
+					left: 50px;
+					transform: rotate(180deg);
+				}
+				&:after{
+					left:auto;
+					right:0;
+				}
+				
+			}
+			&:hover,
+			&.active{
+				a{
+					padding-left: 0;
+					padding-right: 35px;
+					&:before{
+						right:auto;
+						left:25px;
+					}
+				}
+			}
+		}
+	}
+	// download-file
+	.download-file {
+		padding: 25px 20px 20px 25px;
+		ul{
+			li{
+				a {
+					text-align: right;
+					i {
+						&:after, 
+						&:before {
+							left: auto;
+							right: 0;
+						}
+					}				
+				}
+			}
+		}
+	}
+	
+	// Contact Box
+	.widget_contact{
+		&:after{
+			left:auto;
+			right:0;
+		}
+	}
+
+	// WP Widget Start
+	/* widget listing*/
+	.wp-block-latest-posts,
+	.wp-block-categories-list,
+	.wp-block-archives-list,
+	.widget_categories ul,
+	.widget_archive ul,
+	.widget_meta ul,
+	.widget_pages ul,
+	.widget_recent_comments ul,
+	.widget_nav_menu ul,
+	.widget_recent_entries ul,
+	.widget_services ul{
+		padding-right: 0;
+		li{
+			padding: 0.5rem 0.9375rem 0.5rem 0rem;
+			a{
+				&:before{
+					left: auto;
+					right: -15px;
+					top: -1px;
+					content: "\f104";
+				}
+			}
+			
+			li{
+				&:before {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+		ul{
+			padding-left: 0;
+			padding-right: 1.25rem;
+			margin-left: 0;
+			margin-right: -0.9375rem;
+		}
+	}
+	.widget_archive ul li,
+	.wp-block-categories-list li,
+	.wp-block-archives-list li,
+	.wp-block-latest-posts li,
+	.widget_categories ul li {
+		text-align: left;
+		padding: 0.625rem 0.9375rem 0.625rem 0rem !important;
+	}
+	.widget_archive li a,
+	.wp-block-latest-posts li a,
+	.wp-block-categories-list li a,
+	.wp-block-archives-list li a,
+	.widget_categories li a {
+		float: right;
+		text-align: right;	
+	}
+	// WIDGET RECENT COMMENT
+	.widget_recent_comments{
+		
+		ul{
+			li{
+				padding-left: 0;
+				padding-right: 1.875rem;
+				&:before {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
+
+	.wp-calendar-nav {
+		span {
+			border-right:0;
+			border-left:0.0625rem solid rgba(255,255,255,0.2);
+		}
+	}
+	
+	// WIDGET GALLERY
+	.widget_gallery{
+		ul {
+			padding-left: auto;
+			padding-right: 0;
+		}
+		li {
+			float:right;
+			
+			&:nth-child(3n-3) {
+				margin-left: 0;
+			}
+		}
+	}
+
+
+	// widget_tag_cloud
+	.widget_tag_cloud{
+		.tagcloud{
+			a{
+				margin: 0 0 15px 15px ;
+			}
+		}
+	}
+
+
+	// recent-posts-entry
+	.recent-posts-entry{
+		.widget-post-bx{
+			.widget-post{
+				.dlab-info{
+					padding-left: 0;
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+	
+	
+}

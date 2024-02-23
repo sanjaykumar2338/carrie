@@ -1,0 +1,31 @@
+[dir='rtl']{
+	
+	.breadcrumb-row{
+		ul {
+			li {
+				margin-right: 0;
+				margin-left: 3px;
+			}
+		}
+	}
+	.breadcrumb-item + .breadcrumb-item::before {
+		float: right;
+		padding-right: 0;
+		padding-left: 0.5rem;
+		color: #6c757d;
+	}
+	.dlab-bnr-inr{
+		&.style-1{
+			&:after{
+				left: auto;
+				right: 0;
+			}
+		}
+		&.style-2{
+			&:after{
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+}

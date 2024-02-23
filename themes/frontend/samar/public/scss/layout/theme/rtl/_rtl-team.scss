@@ -1,0 +1,23 @@
+[dir='rtl']{
+	
+	.dlab-team{
+		&.style-4{
+			.overlay-content{
+				left: auto;
+				right: -70px;
+			}
+			&:hover{
+				.overlay-content{
+					left: auto;
+					right: 0;
+				}
+				.dlab-media{
+					img{
+						transform: translateX(-60px);
+					}
+				}
+			}
+		}
+	}
+	
+}

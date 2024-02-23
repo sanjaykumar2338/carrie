@@ -1,0 +1,12 @@
+[dir='rtl']{
+	
+	.dlab-box,
+	.dlab-img-effect {
+		// IMAGE SIDE PAN
+		&.side-pan:hover img {
+			margin-left: auto;
+			margin-right: -11%;
+		}
+	}
+	
+}

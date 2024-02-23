@@ -1,0 +1,427 @@
+// dlab-overlay-box
+.dlab-overlay-box{
+	overflow: hidden;
+	
+	.dlab-info{
+		position: absolute;
+		z-index: 99;
+		@include transitionMedium;
+		width: 100%;
+	}
+		
+	&.style-1{
+		border-radius: $border-radius;
+		margin-bottom: 25px;
+		
+		.dlab-info{			
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			padding: 30px;
+			
+			.title{
+				margin-bottom: 0px;
+				@include transitionMedium;
+				transform: translateY(200px);
+				-moz-transform: translateY(200px);
+				-webkit-transform: translateY(200px);
+				-ms-transform: translateY(200px);
+				-o-transform: translateY(200px);
+				transition-delay: 0.4s;	
+				-moz-transition-delay: 0.4s;	
+				-webkit-transition-delay: 0.4s;	
+				-ms-transition-delay: 0.4s;	
+				-o-transition-delay: 0.4s;	
+				opacity:0;
+				a{
+					color: $white;
+				}
+			}
+			
+			.icon-link{
+				height: 60px;
+				width: 60px;
+				border-radius: 60px;
+				background-color: $white-light;
+				color: $white;
+				line-height: 60px;
+				text-align: center;
+				display: block;
+				font-size: 24px;
+				margin: auto;
+			}
+		}
+		.tags-list{
+			margin-bottom: 25px;
+			@include transitionMedium;
+			transform: translateY(200px);
+			-moz-transform: translateY(200px);
+			-webkit-transform: translateY(200px);
+			-ms-transform: translateY(200px);
+			-o-transform: translateY(200px);
+			transition-delay: 0.6s;	
+		    -moz-transition-delay: 0.6s;	
+		    -webkit-transition-delay: 0.6s;	
+		    -ms-transition-delay: 0.6s;	
+		    -o-transition-delay: 0.6s;	
+			opacity:0;
+			
+			li{
+				a{
+					color: $white;
+				}
+				&:after{
+					color: $white;
+				}
+			}
+		}
+		.icon-btn{
+			height: 60px;
+			width: 60px;
+			border-radius: 50%;
+			padding: 0;
+			line-height: 60px;
+			font-size: 24px;
+			color: var(--primary);
+			@include transitionMedium;
+			transform: translateY(200px);
+			-moz-transform: translateY(200px);
+			-webkit-transform: translateY(200px);
+			-ms-transform: translateY(200px);
+			-o-transform: translateY(200px);
+		    transition-delay: 0.7s;	
+			-moz-transition-delay: 0.7s;	
+			-webkit-transition-delay: 0.7s;	
+			-ms-transition-delay: 0.7s;	
+			-o-transition-delay: 0.7s;	
+			opacity:0;
+			&:hover{
+			    background-color: $white;
+			    border-color: $white;
+				color:var(--primary) !important;
+				box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.10);
+			}
+		}
+		.dlab-media span{
+			position: absolute;
+			top: 0;
+			z-index: 2;
+			color: #fff;
+			right: 0;
+			font-size: 28px;
+			width: 60px;
+			height: 60px;
+			border: 1px solid #fff;
+			border-radius: 100%;
+			text-align: center;
+			line-height: 64px;
+			cursor: pointer;
+			opacity:0;
+			transition:all 0.6s;
+			-moz-transition:all 0.6s;
+			-webkit-transition:all 0.6s;
+			-ms-transition:all 0.6s;
+			-o-transition:all 0.6s;
+			&:after,
+			&:before{
+				content:"";
+				position:absolute;
+				height:100%;
+				width:100%;
+				top:0;
+				left:0;
+				border:inherit;
+				border-radius:inherit;
+				z-index: -1;	
+				opacity:0;
+				transition:all 0.6s ease 0.3s;
+				-moz-transition:all 0.6s ease 0.3s;
+				-webkit-transition:all 0.6s ease 0.3s;
+				-ms-transition:all 0.6s ease 0.3s;
+				-o-transition:all 0.6s ease 0.3s;
+			}
+		}
+		&:hover{
+			.dlab-media{
+				&:before{
+					opacity: 0.8;
+				}
+				span{
+					transform:translateY(0);
+					-moz-transform:translateY(0);
+					-webkit-transform:translateY(0);
+					-ms-transform:translateY(0);
+					-o-transform:translateY(0);	
+					opacity:1;
+					right: 60px;
+					top: 60px;
+					&:after{
+						transform: scale(1.8);
+						-moz-transform: scale(1.8);
+						-webkit-transform: scale(1.8);
+						-ms-transform: scale(1.8);
+						-o-transform: scale(1.8);
+						opacity: 0.5;
+					}
+					&:before{
+						transform: scale(2.6);
+						-moz-transform: scale(2.6);
+						-webkit-transform: scale(2.6);
+						-ms-transform: scale(2.6);
+						-o-transform: scale(2.6);
+						opacity: 0.2;
+					}
+				}
+			}
+			.dlab-info{
+				opacity: 1;
+				.title{
+					transform: translateY(0);
+					-moz-transform: translateY(0);
+					-webkit-transform: translateY(0);
+					-ms-transform: translateY(0);
+					-o-transform: translateY(0);
+					opacity:1;
+				}
+			}
+			.tags-list,
+			.icon-btn{
+				transform: translateY(0);
+				-moz-transform: translateY(0);
+				-webkit-transform: translateY(0);
+				-ms-transform: translateY(0);
+				-o-transform: translateY(0);
+				opacity:1;
+			}
+		}
+	}
+	
+	// style 2
+	&.style-2{
+		border-radius: 10px;
+		
+		.dlab-info{
+			bottom: -100%;
+			left: 0;
+			text-align: left;
+			padding: 30px;
+			.title{
+				font-size: 22px;
+				font-weight: 800;
+				a{
+					color: $white;
+				}
+			}
+			.post-author{
+				color: $white;
+				margin-bottom: 0;
+				opacity: 0.7;
+				a{
+					color: $white;
+				}
+			}
+		}
+		.dlab-media span{
+			position: absolute;
+			top: 0;
+			background: var(--gradient);
+			z-index: 2;
+			color: #fff;
+			right: 0;
+			font-size: 28px;
+			width: 50px;
+			height: 50px;
+			border-radius: 8px;
+			text-align: center;
+			line-height: 50px;
+			cursor: pointer;
+			background-size: 200%;
+			opacity: 0;
+			@include transitionMedium;
+			&:hover{
+			    background-position: right center;	
+			}
+		}
+		&:hover{
+			.dlab-media span{
+				opacity:1;
+				top: 20px;
+				right:20px;
+			}
+			.dlab-info{
+				bottom: 0;
+			}
+		}
+
+		&.box{
+			&_1,&_2{
+				img{
+					height: 430px;
+				}
+			}
+			&_3,&_4{
+				img{
+					height: 195px;
+				}
+			}
+			&_5{
+				img{
+					height: 280px;
+				}
+			}
+			&_6{
+				img{
+					height: 505px;
+				}
+			}
+		}
+	}
+	
+	// style 3
+	&.style-3{
+		border-radius: 10px;
+		box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.1);
+		
+		.dlab-info{
+			top: 50%;
+			left: 0;
+			width: 100%;
+			transform:translateY(-50%) scale(2);
+			-moz-transform: translateY(-50%) scale(2);
+			-webkit-transform: translateY(-50%) scale(2);
+			-ms-transform: translateY(-50%) scale(2);
+			-o-transform:translateY(-50%) scale(2);
+			opacity:0;
+			text-align:center;
+			
+			.post-author{
+				margin-bottom: 0;
+				color:#fff;
+				opacity:0.7;
+				
+				a{
+					color: inherit;
+				}
+			}
+			
+			.title{
+				font-size: 20px;
+				font-weight: 800;
+				color: #fff;
+				a{
+					color: #fff;
+				}
+			}
+		}
+		.dlab-img-overlay1:before{
+			background-image:var(--gradient-sec);	
+			background-size: 200%;
+		}
+		&:hover{
+			.dlab-info{
+				top: 50%;
+				opacity:1;
+				transform:translateY(-50%) scale(1);
+				-moz-transform: translateY(-50%) scale(1);
+				-webkit-transform: translateY(-50%) scale(1);
+				-ms-transform: translateY(-50%) scale(1);
+				-o-transform:translateY(-50%) scale(1);
+			}
+			.dlab-img-overlay1:before{
+				opacity:0.8;
+			}	
+		}
+		@include respond('tab-land'){
+			.dlab-info{
+				padding: 20px 40px 20px 20px;
+				left: 20px;
+				right: 20px;
+				&:before {
+					font-size: 36px;
+					right: 20px;
+				}
+			}
+		}
+	}
+
+	// style 4
+	&.style-4{
+		border-radius: 10px;
+		
+		&:hover .dlab-img-overlay1::before{
+			opacity: 0.7;
+			background: var(--primary);
+		}
+		.dlab-info{
+			bottom: -100%;
+			left: 0;
+			text-align: left;
+			padding: 30px;
+			
+			.title{
+				font-size: 22px;
+				font-weight: 700;
+				a{
+					color: $white;
+				}
+			}
+			.post-author{
+				color: #F2F2F2;
+				margin-bottom: 0;
+				
+				a{
+					color: $white;
+				}
+			}
+			.post-date a{
+				color: #F2F2F2;
+			}
+		}
+		.dlab-media img{
+			min-height: 350px;
+			object-fit: cover;
+		}
+		.dlab-media span{
+			position: absolute;
+			top: 0;
+			background: $white;
+			z-index: 2;
+			color: var(--primary);;
+			right: 0;
+			font-size: 28px;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 50px;
+			cursor: pointer;
+			background-size: 200%;
+			opacity: 0;
+			@include transitionMedium;
+			
+			&:hover{
+			    background-position: right center;	
+			}
+		}
+		&:hover{
+			.dlab-media span{
+				opacity:1;
+				top: 20px;
+				right:20px;
+			}
+			.dlab-info{
+				bottom: 0;
+			}
+		}
+	}
+
+}
+.portfolio-swiper,
+.portfolio-swiper2{
+	.post-author{
+		padding: 0 70px;
+		@include respond('tab-port'){
+			padding: 0 20px;
+		}
+	}
+}

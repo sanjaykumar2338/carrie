@@ -1,0 +1,303 @@
+[dir='rtl']{
+	
+	// Header Logo
+	.logo-header {
+		float: right;
+	}
+
+	// Top Bar
+	.top-bar {
+		.dlab-topbar-left {
+			float: right;
+			
+			li{
+				padding-left: 20px;
+				padding-0: 20px;
+			}
+		}
+		.dlab-topbar-right {
+			float: left;
+			
+			li{
+				padding-left: 0;
+				padding-right: 15px;
+			}
+		}
+		
+		.dlab-topbar-center,
+		.dlab-topbar-left,
+		.dlab-topbar-right {
+			padding-left: 15px;
+			padding-right: 15px;
+			
+			ul{
+				i{
+					margin-left: 5px;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	// Quik Search
+	.dlab-quik-search{
+		left:0;
+		
+		span{
+			position:absolute;
+			right:auto;
+			left:15px;
+		}
+	}
+
+	// Site Header
+	.site-header {
+		.extra-nav{
+			float: left;
+			margin-right: 20px;
+			margin-left: 0;
+		}
+	}
+	
+	// Navbar Toggler
+	.navbar-toggler {
+		float: left;
+		margin: 36px 15px 36px 0;
+		
+		@include respond('phone'){
+			margin: 28px 15px 28px 0;
+		}
+	}
+
+	// Navicon
+	.navicon{
+		span{
+			left: auto;
+			right: 0;
+		}
+		
+		&.open span:nth-child(2) {
+			left: auto;
+			right: -60px;
+		}
+	}
+
+	// Header Nav
+	.header-nav {
+		@include respond('tab-port'){
+			left: auto;
+			right:-280px;
+		}
+		&.show {
+			@include respond('tab-port'){
+				left: auto;
+				right: -1px;
+			}
+		}
+		.badge {
+			margin-left: 0;
+			margin-right: 0.4rem;
+		}
+		.nav{
+			float: left;
+			
+			&>li {
+				&.has-mega-menu {
+					&>a {
+						&:after{
+							margin-left: 0;
+							margin-right: 7px;
+							
+							@include respond('tab-port'){	
+								right: auto;
+								left: 0;
+								float: left;
+							}
+						}
+					} 
+				}
+				&.sub-menu-down{
+					&>a {
+						&:after{
+							margin-left: 0;
+							margin-right: 7px;
+							
+							@include respond('tab-port'){	
+								right: auto;
+								left: 0;
+								float: left;
+								content:"\f053";
+							}
+						}
+					}
+					@include respond('tab-port'){
+						&.open{
+							&>a {
+								&:after{
+									content:"\f078";
+								}
+							}
+						}
+					}
+				}
+				&>a {
+					border-width: 0 1px 0 0;
+					
+					i{
+						margin-right: 3px;
+						margin-left: 0;
+						
+						@include respond('tab-port'){	
+							right: auto;
+							left: 0;
+							float: left;
+						}
+					}
+				}
+				.mega-menu,
+				.sub-menu {
+					left: auto;
+					right: 0;
+					
+					@include respond('tab-port'){	
+						& > li > a i{
+							right: auto;
+							left: 0;
+							
+							&:before{
+								content: "\f104";
+							}
+						}
+						& > li.open > a i{
+							&:before{
+								content: "\f107";
+							}
+						}
+					}
+					li {
+						a {
+							&:after {
+								left: auto;
+								right: 20px;
+							}
+							@include respond('tab-port'){
+								padding: 2px 15px 1px 0;
+								
+								&:after{
+									left: auto;
+									right: 0;
+								}
+							}
+						}
+						&:hover > a{
+							padding: 10px 35px 10px 20px;
+							
+							@include respond('tab-port'){
+								padding: 2px 15px 1px 0;
+							}
+						}
+					}
+					li>.sub-menu {
+						left: auto;
+						right: 220px;
+					}
+					@include respond('tab-port'){
+						.mega-menu,
+						.sub-menu{
+							padding-left: 0;
+							padding-right: 20px;
+						}
+					}
+				}
+				.sub-menu{
+					li > a > i {
+						float: left;
+						@include respond('tab-port-min'){
+							transform: rotate(180deg);
+							margin-top: 4px;
+						}
+					}					
+				}
+				.mega-menu {
+					right: auto;
+					left: 0px;
+					
+					&>li {
+						&>a {
+							&>i{
+								margin-left: 5px;								
+								margin-right: 0;								
+							}
+						}
+						&:after {
+							right: auto;
+							left: 0px;
+						}
+						li i{
+							margin-right: 0;
+							margin-left: 5px;
+						}
+					}
+				}
+			}
+			@include respond('laptop'){
+				&>li:nth-last-child(3),
+				&>li:nth-last-child(2),
+				&>li:last-child{
+					.sub-menu .sub-menu{
+						left: auto;
+						right:-220px;
+					}
+				}
+			}
+			@include custommq($max: 1199px) {
+				&>li:last-child{
+					.sub-menu{
+						left:0;
+						right:auto;
+					}
+				}
+			}
+			@include respond('tab-port'){
+				float: none;
+			}
+		}
+	}
+	
+	// Is Fixed
+	.is-fixed{
+		.main-bar{
+			left: auto;
+			right: 0;
+		}
+	}
+
+	// Mobile Nav
+	@include respond('tab-port'){
+		.mo-left{
+			.header-nav{
+				left: auto;
+				right:-280px;
+				
+				&.show {
+					left: auto;
+					right: -1px;
+				}
+			}	
+			.navbar-toggler{
+				&.open{
+					&:after {
+						left: -20px;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	/* Logo */
+	.new-page{
+		margin-left: 0;
+		margin-right: 0.4rem;		
+	}
+}

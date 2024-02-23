@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Kolkata',
 
     /*
     |--------------------------------------------------------------------------
@@ -141,7 +141,7 @@ return [
 
     'maintenance' => [
         'driver' => 'file',
-        // 'store' => 'redis',
+        // 'store'  => 'redis',
     ],
 
     /*
@@ -165,9 +165,11 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\DzServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -182,7 +184,12 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
+        'Form' => Collective\Html\FormFacde::class,
+        'Html' => Collective\Html\HtmlFacde::class,
+        'HelpDesk' => App\Helper\HelpDesk::class,
+        'DzHelper' => App\Helper\DzHelper::class,
+        'Acl' => App\Helper\Acl::class,
+        'CptHelper' => Modules\W3CPT\Helpers\CptHelper::class,
     ])->toArray(),
 
 ];

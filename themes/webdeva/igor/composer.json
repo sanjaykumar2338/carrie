@@ -1,0 +1,20 @@
+{
+    "name": "webdeva/igor",
+    "description": "none",
+    "type": "laravel-theme",
+    "version": "1",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Intekhab",
+            "email": "mohammed_intekhab@hotmail.com"
+        }
+    ],
+    "extra": {
+        "theme": {
+            "parent": "",
+            "active": true,
+            "screenshot": "screenshot.png"
+        }
+    }
+}

@@ -56,6 +56,12 @@ return [
             'throw' => false,
         ],
 
+        'themes' => [
+            'driver' => 'local',
+            'root' => base_path('themes'),
+            'throw' => false,
+        ],
+
     ],
 
     /*

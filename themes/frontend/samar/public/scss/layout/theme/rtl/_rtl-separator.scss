@@ -1,0 +1,42 @@
+[dir='rtl']{
+	
+	.dlab-separator {
+		&[class*="style-"]{
+			//&:after,
+			//&:before {
+			//	left: auto;
+			//	right: 40px;
+			//}
+			&:before {
+				left: 40px;
+				right: auto;
+			}
+		}
+		&.style-skew {
+			&[class*="style-"]{
+				&:after,
+				&:before {
+					left: auto;
+					right: 20px;
+				}
+				&:before {
+					right: auto;
+					left: 20px;
+				}
+			}
+		}
+		&.bnr-title{
+			&:before {
+				right: auto;
+				left: -80px;
+			}
+			i {
+				right: auto;
+				left: -50px;
+			}
+		}
+	}
+
+
+	
+}

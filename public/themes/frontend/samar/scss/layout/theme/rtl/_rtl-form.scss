@@ -1,0 +1,127 @@
+[dir='rtl']{
+
+	.input-group-append {
+		.input-group-text {
+			border-top-right-radius   : 0;
+			border-top-left-radius   : 5px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 5px;
+		}
+	}
+
+	.input-group-prepend {
+		.input-group-text {
+			border-top-left-radius   : 0;
+			border-top-right-radius   : 5px;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 5px;
+		}
+	}
+	
+	.toggle-switch {
+		&:before {
+			left         : auto;
+			right         : 3px;
+			transition   : right 0.25s;
+		}
+		.toggle-checkbox:checked+& {
+			&:before {
+				left: auto;
+				right: 26px;
+			}
+		}
+	}
+
+	// Upload btn
+	.file-upload-wrapper {
+		&:after {
+			left          : auto;
+			right          : 0;
+			border-radius : 5px 5px 10px 10px;
+		}
+
+		&:before {
+			right   : auto;
+			left   : 0;
+			border-radius : 0 0 5px 5px;
+		}
+	}
+
+	.ui-datepicker-header a {
+		&.ui-datepicker-prev {
+			left               : auto;
+			right               : 0;
+		}
+
+		&.ui-datepicker-next {
+			right              : auto;
+			left              : 0;
+		}
+
+	}
+
+	// Nice Select
+	.nice-select {
+		border-top-left-radius   : 0 !important;
+		border-top-right-radius   : 3px !important;
+		border-bottom-left-radius: 0 !important;
+		border-bottom-right-radius: 3px !important;
+	}
+
+	.input-group-prepend + .form-control.bootstrap-select {
+		padding: 0;
+	}
+	.bootstrap-select{
+		.btn{
+			&:before{
+				right: auto;
+				left: 20px;
+			}
+		}
+		.dropdown-menu {
+			ul li {
+				a {
+					img {
+						margin-right: 0;
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+		&.form-control .btn.dropdown-toggle:before{
+			right: auto;
+			left: 22px;
+		}
+	}
+	.input-group-prepend{
+		left: auto;
+		right: 10px;
+		border-right: 0;
+		border-left: 1px solid #9192a4;
+		margin-right: 0;
+		margin-left: 10px;
+	}
+	.input-group-prepend + .form-control,
+	.input-group-prepend + .bootstrap-select .btn.dropdown-toggle,
+	.input-group-prepend + .form-control + .custom-file-label{
+		padding: 10px 65px 10px 20px;
+	}
+	.input-group-prepend +  textarea.form-control{
+		padding: 18px 65px 18px 20px;
+		
+		@include respond('tab-land'){
+			padding: 10px 65px 18px 20px;
+		}
+	}
+	.bootstrap-select.btn-group{
+		.dropdown-toggle{
+			.caret{
+				right: auto;
+				left: 5px;
+			}
+		}
+	}
+	.dropdown-menu {
+		text-align: right;
+	}
+}

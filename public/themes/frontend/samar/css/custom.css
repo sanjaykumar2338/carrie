@@ -1,0 +1,111 @@
+@import url(style.css);
+
+.recent-posts-entry .widget-post-bx .widget-post {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: all 0.5s;
+}
+.recent-posts-entry .widget-post-bx .widget-post .dz-media {
+    width: 92px;
+    min-width: 92px;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+@media (max-width: 1199px) {
+    .recent-posts-entry .widget-post-bx .widget-post .dz-media {
+        width: 75px;
+        min-width: 75px;
+   }
+}
+.recent-posts-entry .widget-post-bx .widget-post .dz-meta {
+    margin-bottom: 0;
+}
+.recent-posts-entry .widget-post-bx .widget-post .dz-meta ul {
+    line-height: 1;
+}
+.recent-posts-entry .widget-post-bx .widget-post .dz-meta ul li {
+    font-size: 15px;
+}
+.site-footer.style-2 .recent-posts-entry .widget-post-bx .widget-post .title a{
+    color: white;
+}
+.recent-posts-entry .widget-post-bx .widget-post .title {
+    line-height: 1.3;
+    font-family: 'Poppins';
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+}
+.recent-posts-entry .widget-post-bx .widget-post .post-date {
+    font-size: 14px;
+}
+.recent-posts-entry .widget-post-bx .widget-post .post-date {
+   font-weight: 500; 
+}
+.site-footer.style-2 .recent-posts-entry .widget-post-bx .widget-post:not(:last-child) {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+/* Testimonial Swiper navigation design start*/
+.swiper-container {
+    position: relative;
+}
+
+.swiper-container .num-pagination {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.swiper-container .num-pagination .btn-prev,
+.swiper-container .num-pagination .btn-next {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 575px) {
+
+    .swiper-container .num-pagination .btn-prev,
+    .swiper-container .num-pagination .btn-next {
+        width: 40px;
+        height: 40px;
+        margin: 0 -12px;
+    }
+}
+
+.swiper-container .num-pagination .btn-prev i,
+.swiper-container .num-pagination .btn-next i {
+    color: var(--primary);
+}
+
+.swiper-container .num-pagination .btn-prev:hover,
+.swiper-container .num-pagination .btn-next:hover {
+    background: var(--primary);
+}
+
+.swiper-container .num-pagination .btn-prev:hover i,
+.swiper-container .num-pagination .btn-next:hover i {
+    color: #fff;
+}
+/* Testimonial Swiper navigation design end*/

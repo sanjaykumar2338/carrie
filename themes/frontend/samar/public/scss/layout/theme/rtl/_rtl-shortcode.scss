@@ -1,0 +1,71 @@
+[dir='rtl']{
+	
+	.p-l0 {
+		padding-right: 0;
+	}
+	.p-r0 {
+		padding-left: 0;
+	}
+	.m-l0 {
+		margin-right: 0;
+	}
+	.m-r0 {
+		margin-left: 0;
+	}
+	
+	@for $i from 0 through $value{
+		
+		// Padding Value
+		.p-l#{$i*$x}{
+			padding-right: ($x*$i) + px;
+			padding-left: 0;
+		}
+		.p-r#{$i*$x}{
+			padding-left: ($x*$i) + px;
+			padding-right: 0;
+		}
+		
+		// Margin Value
+		.m-l#{$i*$x}{
+			margin-right: ($x*$i) + px;
+			margin-left: 0;
+		}
+		.m-r#{$i*$x}{
+			margin-left: ($x*$i) + px;
+			margin-right: 0;
+		}
+		
+	}
+	
+	section{
+		&:after{
+			left: auto;
+			right: 0;
+		}
+	}
+	.section-head{
+		&.head-col{
+			p{
+				padding-left: 0;
+				padding-right: 15px;
+				border-right: 4px solid var(--primary);
+				margin-left: 0;
+				margin-right: 15px;
+				@include respond('phone-land'){
+					padding-right: 0;
+					border-right:0;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	
+	.ms-auto{
+		margin-right: auto !important;
+		margin-left: 0 !important;
+	}
+	.me-auto{
+		margin-left: auto !important;
+		margin-right: 0 !important;
+	}
+}

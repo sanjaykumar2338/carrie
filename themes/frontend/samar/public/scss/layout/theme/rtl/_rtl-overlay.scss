@@ -1,0 +1,176 @@
+[dir='rtl']{
+	.dlab-img-overlay1,
+	.dlab-img-overlay2,
+	.dlab-img-overlay3,
+	.dlab-img-overlay4,
+	.dlab-img-overlay5,
+	.dlab-img-overlay6,
+	.dlab-img-overlay7,
+	.dlab-img-overlay8,
+	.dlab-img-overlay9,
+	.dlab-img-overlay11,
+	.dlab-img-overlay12{
+		&:before,
+		&:after{
+			left: auto;
+			right: 0;
+		}
+	}
+	// DLAB BOX
+	.dlab-box{
+		&:hover{
+			.dlab-img-overlay3:before {
+				left: auto;
+				right: 0;
+			}
+			.dlab-img-overlay4:before {
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+	// EFFECT 3 
+	.dlab-img-overlay3{
+		&:before {
+			left: auto;
+			right: 50%;
+		}
+		&:hover:before{
+			left: auto;
+			right: 0;
+		}
+	}
+	// EFFECT 4
+	.dlab-img-overlay4{
+		&:before{
+			left: auto;
+			right: 50%;
+		}
+		&:hover:before{
+			left: auto;
+			right: 0;
+		}
+	}
+	// EFFECT 5
+	.dlab-img-overlay5{
+		&:before {
+			left: auto;
+			right: 0;
+		}
+	}
+	// EFFECT 6
+	.dlab-img-overlay6{
+		&:before {
+			left: auto;
+			right: 0;
+		}
+	}
+	// EFFECT 7
+	.dlab-img-overlay7{
+		&:after {
+			left: 0;
+			right: auto;
+		}
+	}
+	// EFFECT 8
+	.dlab-img-overlay8{
+		&:after {
+			left: 0;
+			right: auto;
+		}
+	}
+	// EFFECT 9
+	.dlab-img-overlay9:before,
+	.dlab-img-overlay9:after{
+		&:before,
+		&:after{
+			left: 0;
+			right: auto;
+		}
+	}
+	/*  */
+	.overlay-black-light,
+	.overlay-black-middle,
+	.overlay-black-dark,
+	.overlay-gradient-light,
+	.overlay-gradient-middle,
+	.overlay-gradient-dark,
+	.overlay-white-light,
+	.overlay-white-middle,
+	.overlay-white-dark,
+	.overlay-primary-light,
+	.overlay-primary-middle,
+	.overlay-primary-dark,
+	.overlay-primary,
+	.overlay-secondary-light,
+	.overlay-secondary-middle,
+	.overlay-secondary-dark,
+	.overlay-secondary{
+		&:before {
+			left: auto;
+			right: 0;
+		}
+	}
+
+
+	// OVERLAY BOX
+	.overlay-bx {
+		left: auto;
+		right: 0;
+		
+		.align-b{
+			left: auto;
+			right: 0;
+		}
+		.align-m {
+			left: auto;
+			right: 50%;
+		}
+	}
+	.overlay-icon{
+		left: auto;
+		right: 50%;
+	}
+
+	/* Shine */
+
+	.overlay-shine{
+		&:before {
+			left: auto;
+			right: -75%;
+		}
+	}
+	.dlab-team.style-1{
+		.dlab-media{
+			&:before{
+				left: auto;
+				right: -75%;
+			}
+		}
+	}
+	@-webkit-keyframes shine {
+		100% {
+			left: auto;
+			right: 125%;
+		}
+	}
+	@keyframes shine {
+		100% {
+			left: auto;
+			right: 125%;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

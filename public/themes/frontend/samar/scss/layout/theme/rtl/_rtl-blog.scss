@@ -1,0 +1,71 @@
+[dir='rtl']{
+	
+	.dlab-blog{
+		.post-tags{
+			a{
+				margin-left: 0;
+				margin-right: 5px;
+			}
+		}
+		.dlab-meta{
+			&>ul{
+				&>li{
+					&.post-comment{
+						margin-right: auto;
+						margin-left: 0;
+						padding-left: 5px;
+						
+						span{
+							margin-left: 0;
+							margin-right: 10px;
+						}
+					}
+					&.post-author{
+						a{
+							margin-left: 0;
+							margin-right: 3px;
+						}
+					}
+					&.post-share{
+						ul {
+							right: auto;
+							left: 40px;
+							
+							&:after {
+								right: auto;
+								left: -7px;
+								transform: rotate(-45deg) translateX(50%);
+								-moz-transform: rotate(-45deg) translateX(50%);
+								-webkit-transform: rotate(-45deg) translateX(50%);
+							}
+						}
+					}
+				}
+			}
+		}
+		&.blog-half{
+			.dlab-media{
+				margin-right: 0;
+				margin-left: 20px;
+			}
+			@include respond('phone'){
+				.dlab-media{
+					margin-left: 0;
+				}
+			}
+		}
+	}
+	.post-quote{
+		padding-left: 50px;
+		padding-right: 120px;
+		
+		.post-quote-icon{
+			left: auto;
+			right: 40px;
+		}
+		@include respond('phone'){
+			padding: 30px;
+			padding-right: 115px;
+		}
+	}
+}

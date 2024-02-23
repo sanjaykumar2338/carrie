@@ -1,0 +1,261 @@
+[dir='rtl']{
+	
+	
+	// > ALIGN RIGHT
+	.alignright {
+		float: left;
+		margin: 0.3125rem 1.563rem 1.563rem 0;
+		&img,
+		&.wp-caption,
+		&.is-resized{
+			margin: 0.3125rem 1.563rem 1.563rem 0;
+			float: left;
+		}
+	}
+	// > ALIGN LEFT
+	.alignleft{
+		float: right;
+		margin: 0.3125rem 0 1.563rem 1.563rem;
+		&img,
+		&.wp-caption,
+		&.is-resized{
+			margin: 0.3125rem 0 1.563rem 1.563rem;
+			float: right;
+		}
+	}
+	.wp-caption {
+		p.wp-caption-text {
+			text-align: right;
+		}
+	}
+	// BLOCKQUOTE 
+	.wp-block-quote.is-large, 
+	.wp-block-quote.is-style-large,
+	blockquote.wp-block-quote,
+	blockquote.wp-block-pullquote,
+	blockquote.wp-block-pullquote.alignright, 
+	blockquote.wp-block-pullquote.alignleft,
+	blockquote {
+		
+		cite{
+			:before{
+				margin-right: 0;
+				margin-left: 0.625rem;
+			}
+		}
+		&:before {
+			left: auto;
+			right: -2%;
+		}
+	}
+	.dlab-page-text > ol,
+	.dlab-page-text > ul,
+	.blog-post.blog-single .dlab-post-text.text > ol,
+	.blog-post.blog-single .dlab-post-text.text > ul {
+		padding-left: 0;
+		padding-right: 1.25rem;
+		ol,
+		ul{
+			padding-left:0;
+			padding-right:1.563rem;
+		}
+	}
+	.wp-block-gallery .blocks-gallery-image, 
+	.wp-block-gallery .blocks-gallery-item{
+		margin: 0 0 0.5rem 0.5rem;
+	}
+	.wp-block-gallery.columns-4 .blocks-gallery-image, 
+	.wp-block-gallery.columns-4 .blocks-gallery-item,
+	.wp-block-gallery.columns-3 .blocks-gallery-image, 
+	.wp-block-gallery.columns-3 .blocks-gallery-item{
+		margin-right: 0;
+		margin-left: 0.5rem;
+	}
+	.alignfull,
+	.alignfullwide{
+		margin-left: 0;
+		margin-right: calc(50% - 50vw - (var(--content-share-ml,0px)/2));
+	}
+	.wp-block-quote.has-text-align-right{
+		border-left:0;
+	}
+	.dlab-page-text ul > li:before,
+	.dlab-page-text ol > li:before,
+	.blog-post.blog-single .dlab-post-text ul > li:before,
+	.blog-post.blog-single .dlab-post-text ol > li:before{
+		left: 0;
+		right: -0.938rem;
+	}
+	.paginate-links a, 
+	.paginate-links > span {
+		margin: 0 0.625rem 0 0;
+	}
+
+	.wp-block-gallery .blocks-gallery-image,
+	.wp-block-gallery .blocks-gallery-item {
+		margin: 0 0 0.375rem 0.375rem;
+	}
+	
+	.wp-block-gallery .blocks-gallery-image:nth-of-type(2n),
+	.wp-block-gallery .blocks-gallery-item:nth-of-type(2n) {
+		margin-left: 0
+	}
+
+	.wp-block-gallery.columns-1 .blocks-gallery-image,
+	.wp-block-gallery.columns-1 .blocks-gallery-item {
+		margin-left: 0;
+	}
+	
+	@media (min-width:37.5rem) {
+		.wp-block-gallery.columns-3 .blocks-gallery-image,
+		.wp-block-gallery.columns-3 .blocks-gallery-item {
+			margin-right: 0;
+			margin-left: 0.375rem;
+		}
+		.wp-block-gallery.columns-4 .blocks-gallery-image,
+		.wp-block-gallery.columns-4 .blocks-gallery-item {
+			margin-right: 0;
+			margin-left: 0.375rem;
+		}
+		.wp-block-gallery.columns-5 .blocks-gallery-image,
+		.wp-block-gallery.columns-5 .blocks-gallery-item {
+			margin-right: 0;
+			margin-left: 0.375rem;
+		}
+		.wp-block-gallery.columns-6 .blocks-gallery-image,
+		.wp-block-gallery.columns-6 .blocks-gallery-item {
+			margin-right: 0;
+			margin-left: 0.375rem;
+		}
+		.wp-block-gallery.columns-7 .blocks-gallery-image,
+		.wp-block-gallery.columns-7 .blocks-gallery-item {
+			margin-right: 0;
+			margin-left: 0.375rem;
+		}
+		.wp-block-gallery.columns-8 .blocks-gallery-image,
+		.wp-block-gallery.columns-8 .blocks-gallery-item {
+			margin-right: 0;
+			margin-left: 0.375rem;
+		}
+		.wp-block-gallery.columns-1 .blocks-gallery-image:nth-of-type(1n),
+		.wp-block-gallery.columns-1 .blocks-gallery-item:nth-of-type(1n),
+		.wp-block-gallery.columns-2 .blocks-gallery-image:nth-of-type(2n),
+		.wp-block-gallery.columns-2 .blocks-gallery-item:nth-of-type(2n),
+		.wp-block-gallery.columns-3 .blocks-gallery-image:nth-of-type(3n),
+		.wp-block-gallery.columns-3 .blocks-gallery-item:nth-of-type(3n),
+		.wp-block-gallery.columns-4 .blocks-gallery-image:nth-of-type(4n),
+		.wp-block-gallery.columns-4 .blocks-gallery-item:nth-of-type(4n),
+		.wp-block-gallery.columns-5 .blocks-gallery-image:nth-of-type(5n),
+		.wp-block-gallery.columns-5 .blocks-gallery-item:nth-of-type(5n),
+		.wp-block-gallery.columns-6 .blocks-gallery-image:nth-of-type(6n),
+		.wp-block-gallery.columns-6 .blocks-gallery-item:nth-of-type(6n),
+		.wp-block-gallery.columns-7 .blocks-gallery-image:nth-of-type(7n),
+		.wp-block-gallery.columns-7 .blocks-gallery-item:nth-of-type(7n),
+		.wp-block-gallery.columns-8 .blocks-gallery-image:nth-of-type(8n),
+		.wp-block-gallery.columns-8 .blocks-gallery-item:nth-of-type(8n) {
+			margin-left: 0
+		}
+	}
+
+	.wp-block-gallery .blocks-gallery-image:last-child,
+	.wp-block-gallery .blocks-gallery-item:last-child {
+		margin-left: 0
+	}
+	
+	
+	.blog-overlap {
+		border-radius: 0.25rem 0rem 0rem 0.25rem;
+	}
+	// Comments Avatar
+	.wp-block-latest-comments {
+		.wp-block-latest-comments__comment {
+			.wp-block-latest-comments__comment-excerpt {
+				margin-left: 0;
+				margin-right: 4.375rem;
+			}
+		}
+		img {
+			+ {
+				article {
+					.wp-block-latest-comments__comment {
+						.wp-block-latest-comments__comment-meta {
+							margin-left: 0;
+							margin-right: 4.375rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+
+	// POST FOOTER
+	.post-footer {
+		.dlab-meta {
+			.tag-list {
+				text-align: right;
+			}
+			ul li {
+				margin-right: 0;
+				margin-left: 0.3125rem;
+			}
+		}
+	}
+	// COMMENT LIST
+	ol.comment-list {
+		padding-right: 0;
+		
+		li.comment {
+			.comment-author{
+				padding-left: 0;
+				padding-right: 4.6875rem;
+				@include respond('phone-land'){
+					padding-left: 0;
+					padding-right: 4.375rem;
+				}
+				.avatar {
+					left: auto;
+					right: 0;
+				}
+			}
+			.reply {
+				right: auto;
+				left: 0;
+			}
+		}
+		li .children {
+			margin-left: 0;
+			margin-right: 3.4375rem;
+			padding-right: 0;
+			@include respond('phone-land'){
+				margin-left: 0;
+				margin-right: 1.25rem;
+			}
+		}
+	}
+
+	.comments-area{
+		.comment-form {
+			p {
+				float: right;
+			}
+		}
+	}
+	.gallery{
+		.gallery-item {
+			img {
+				float: right;
+			}
+		}
+		
+	}
+
+	.post-password-form {
+		input[type="submit"] {
+			left: 0;
+			right: auto;
+		}
+	}
+
+	
+}

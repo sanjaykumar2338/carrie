@@ -1,0 +1,90 @@
+[dir='rtl']{
+	//default
+	footer{
+		.widget-logo ul{
+			li{
+				padding: 0 0px 15px 15px;	
+			}
+		}
+		.footer-title{
+			&:before,
+			&:after{
+				left: auto;
+				right: 0;
+			}
+			&:after{
+				left: auto;
+				right: 20px;
+			}
+		}
+		.widget-link{
+			li{
+				margin-left: 0;
+				margin-right: 20px;
+				@include respond('phone-land'){
+					margin-left: 7px;
+					margin-right: 8px;
+				}
+			}
+		}
+		
+		.widget_getintuch{
+			ul{
+				li{
+					i{
+						margin-right: 0;
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.contact-info-bx{
+		li{
+			padding-left: 0;
+			padding-right: 30px;
+			
+		}
+		i{
+			margin-right: 0;
+			margin-left: 5px;
+			left: auto;
+			right: 0;
+		}
+	}
+	
+	//footer-1
+	.site-footer{
+		&.style-1{
+			@include respond('tab-land'){
+				.footer-top{
+					.widget_services{
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	//footer-2
+	.site-footer{
+		&.style-2{
+			&:before{
+				background-position: right top;
+				left: auto;
+				right: 0;
+			}
+			@include respond('tab-land'){
+				.footer-top{
+					.widget_services{
+						padding-left: auto;
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+
+}

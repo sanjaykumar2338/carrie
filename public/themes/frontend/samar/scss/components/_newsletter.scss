@@ -1,0 +1,188 @@
+// Newsletter
+.dlab-subscribe{
+	&.style-1{
+		padding: 50px 60px;
+		background-color: $white;
+		z-index: 99;
+		position: relative;
+		border-radius: 10px;
+		box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.1);
+		background-image: url(../images/pattern/pattern3.png);
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		
+		.title{
+			font-size:28px;	
+		}
+		
+		form{
+			.input-group,
+			.form-group{
+				margin-bottom: 0;
+			}
+			.form-control{
+				border-radius: $border-radius-md 0 0 $border-radius-md !important; 	
+				border:0;
+				border: 1px solid #fff;
+				&:hover,
+				&:focus{
+					border-color:var(--primary);	
+				}		
+			}
+			button{
+				border-radius:0 $border-radius-md $border-radius-md 0; 
+				height: 100%;
+				display: flex;
+				align-items: center;
+			}
+			.input-group.shadow{
+				border-radius:	$border-radius-md;
+				box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1) !important;
+				@include transitionMedium;
+				
+				&:focus-within,
+				&:hover{
+					box-shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2) !important;
+				}
+			}
+		}
+		@include respond('tab-land'){
+			margin: 0;
+			padding: 40px;
+		}
+		@include respond('tab-port'){
+			form{
+				margin-left: 0;
+				margin-top: 30px;
+			}
+		}
+		@include respond('phone-land'){
+			.title{
+				font-size: 24px;
+			}
+			form{
+				margin-top: 10px;
+			}
+		}
+		@include respond('phone'){
+			padding: 25px;
+		}
+	}
+	&.style-2{
+		form{
+			.form-control{
+				padding: 10px 200px 10px 30px;
+				border-color: #fff;
+				box-shadow:0px 0px 30px -10px var(--primary-dark);
+				&:focus,
+				&:hover{
+					box-shadow:0px 10px 60px -10px var(--primary-dark);
+				}
+				@include respond('tab-land'){
+					padding: 10px 130px 10px 10px;
+				}
+			}
+			button{
+				position: absolute;
+				right: 5px;
+				top: 5px;
+				z-index: 9;
+				height: 50px;
+				padding-top: 12px;
+				padding-bottom: 12px;
+				
+				@include respond('tab-land'){
+					padding: 8px 20px;
+					height: 40px;
+				}
+			}
+			@include respond('phone'){
+				button{
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+	
+	&.style-3{
+		form{
+			.form-control{
+				height: 56px;
+				border-radius: 0 22px 0 22px!important;
+			}
+			button{
+				position: absolute;
+				right: 4px;
+				top: 4px;
+				z-index: 99;
+			}
+		}
+	}
+	
+	&.style-4{
+		.input-group{
+			margin-bottom: 0;
+			
+			.form-control{
+				border-radius: 10px 0 0 10px!important;
+				box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+				background: rgba(255,255,255,0.2);
+				border: none;
+				color: #fff;
+				
+				&::placeholder{
+					color: #fff;
+				}
+			}
+			.input-group-addon{
+				button{
+					height: 100%;
+					text-transform: capitalize;
+					padding: 5px 25px;
+					border-radius: 0 10px 10px 0;
+					
+					&.btn-light{
+						&:hover{
+							background-color: #fff;
+							color: var(--primary) !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&.style-5{
+		.input-group{
+			margin-bottom: 10px;
+			
+			.form-control{
+				border-radius: 6px!important;
+				box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+				background: rgba(255,255,255,0.2);
+				border: none;
+				color: #fff;
+				
+				&::placeholder{
+					color: #fff;
+				}
+			}
+			.input-group-addon{
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 100%;
+				z-index: 9;
+				padding: 8px;
+				
+				button{
+					height: 100%;
+					text-transform: capitalize;
+					padding: 0 20px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,151 @@
+[dir='rtl']{
+	
+	// TESTIMONIALS
+	.quote-left{
+		&:before {
+			left: auto;
+			right: 0;
+		}
+	}
+	.quote-right{
+		&:before {
+			right: auto;
+			left: 0;
+		}
+	}
+	
+	
+	.client-says{
+		padding-left:0;
+		padding-right:180px;
+		@include respond('phone-land'){
+			padding-right:0;
+		}
+		.testimonial-pic{
+			left: auto;
+			right: 0;
+		}
+	}
+	.testimonial-two{
+		.client-says{
+			padding-left: 0;
+			padding-right: 130px;
+		}
+	}
+
+	// TESTIMONIAL 1
+	.testimonial-1 {
+		
+		&:before{
+			left: auto;
+			right: 30px;
+			@include respond('phone'){
+				left:auto;
+				right:20px;
+			}
+		}
+		.testimonial-pic{
+			margin-left: 0;
+			margin-right: 20px;
+			@include respond('phone'){
+				margin-left: 0;
+				margin-right: 10px;
+			}
+		}
+		.testimonial-detail{
+			text-align: left;
+		}
+	}
+
+	// testimonial 2 
+	.testimonial-2 {
+		padding: 40px 45px 40px 40px;
+		
+		@include respond('phone'){
+			padding: 20px 25px 20px 20px;
+		}
+		&:before{
+			left: auto;
+			right: 0;
+		}
+		&:after{
+			left: auto;
+			right: 35px;
+			@include respond('phone'){
+				left: auto;
+				right: 20px;
+			}
+			
+		}
+		.testimonial-pic{
+			margin-left: 0;
+			margin-right: 15px;
+			&:before{
+				right: auto;
+				left: 10px;
+			}
+		}
+		.testimonial-detail{
+			text-align: left;
+		}
+	}
+
+	// testimonial 3 
+	.testimonial-3{
+		.testimonial-pic{
+			img{
+				left: auto;
+				right: 50%;
+			}
+		}
+	}
+	
+	.testimonial-4{
+		&.quote-right{
+			&:before{
+				right: auto;
+				left: 30px;
+			}
+		}
+		&.quote-left{
+			&:before{
+				left: auto;
+				right: 30px;
+			}
+		}
+		@include respond('phone'){
+			&.quote-right{
+				&:before{
+					right: auto;
+					left: 20px;
+				}
+			}
+		}
+	}
+
+	// testimonial-5
+	.testimonial-5{
+		&::before{
+			right: auto;
+			left: 40px;			
+		}
+		@include respond('phone'){
+			&::before{
+				right: auto;
+				left: 20px;
+			}
+		}
+		.testimonial-pic{
+			margin-right: 0;
+			margin-left: 15px;
+			
+			@include respond('phone'){
+				margin-right: 0;
+				margin-left: 10px;
+			}
+		}
+		.testimonial-detail{
+			text-align: right;
+		}
+	}
+}

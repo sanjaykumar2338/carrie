@@ -1,0 +1,19 @@
+[dir='rtl']{
+	
+	.btn-link{
+		&.style-1{
+			span{
+				&:before{
+					left: auto;
+					right: 0;
+				}
+			} 
+		}
+	}
+	.btn{
+		i{
+			transform: rotate(180deg) scale(1.2)!important;
+		}
+	}
+	
+}

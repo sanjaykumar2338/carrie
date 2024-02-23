@@ -1,0 +1,43 @@
+[dir='rtl']{
+	
+	ul{
+		&[class*=list-] {
+			li{
+				padding: 8px 35px 8px 5px;
+				&:before{
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+		&.list-check{
+			&.style-1{
+				li{
+					padding: 8px 28px 8px 5px;
+				}
+			}
+			&.style-2{
+				li{
+					padding: 8px 28px 8px 5px;
+				}
+			}
+		}
+		&.list-check-2{
+			li{
+				padding: 10px 48px 10px 5px;
+				
+			}
+		}
+		&.list-arrow{				
+			li{
+				&:hover{
+					&:before{
+						left: auto;
+						right: 10px;
+					}
+				}
+			}
+		}
+	}
+	
+}

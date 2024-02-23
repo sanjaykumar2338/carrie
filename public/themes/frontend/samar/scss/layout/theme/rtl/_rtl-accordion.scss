@@ -1,0 +1,57 @@
+[dir='rtl']{
+	
+	// dlab-accordion
+	.dlab-accordion{
+		.card-header{
+			.dlab-title{
+				a{
+					padding: 22px 30px 22px 65px;
+					&:after{
+						left:auto;
+						right:0;
+					}
+					.toggle-close{
+						right: auto;
+						left: 5px;
+						&:after{
+							left:auto;
+							right:0;
+						}
+					}
+				}
+			}
+			@include respond('phone'){
+				.dlab-title{
+					a{
+						padding: 15px 15px 15px 65px;
+					}
+				}
+			}
+		}
+		&.accordion-sm{
+			.card-header{
+				.dlab-title{
+					a{
+						padding: 15px 20px 15px 55px;
+						&:after{
+							right: auto;
+							left: 5px;
+						}
+						&:before{
+							right: auto;
+							left: 17px;
+						}
+					}
+				}
+				@include respond('phone'){
+					.dlab-title{
+						a{
+							padding: 15px 15px 15px 65px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}

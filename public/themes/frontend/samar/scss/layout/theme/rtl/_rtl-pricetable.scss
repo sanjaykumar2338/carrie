@@ -1,0 +1,125 @@
+[dir='rtl']{
+	
+	.no-col-gap .pricingtable-wrapper {
+		margin-left: 0;
+		margin-right: -1px;
+	}
+
+
+	// pricingtable-toggle
+	.pricingtable-toggle{
+		.custom-control-label{
+			margin: 0 50px 0 35px;
+		}
+	}
+
+	// Pricing Table
+	.pricingtable-wrapper{
+		&.style-1{
+			&:after{
+				left:auto;
+				right:0;
+			}
+			.pricingtable-features{
+				text-align: right;
+				li {
+					padding: 8px 40px 8px 0;
+					
+					&:after{
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+			
+		}
+		
+		&.style-2{
+			.pricingtable-features{
+				li {
+					padding: 5px 40px 5px 0;
+					text-align: right;
+					
+					&:after{
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+		}
+		
+		&.style-3{
+			&:after{
+				left: auto;
+				right: 0;
+			}
+			.pricingtable-head{
+				&:after{
+					left: auto;
+					right: 0;
+				}
+			}
+			.pricingtable-features{
+				text-align: right;
+				
+				li {
+					padding: 8px 30px 8px 8px;
+					@include respond('tab-land'){
+						padding: 5px 30px 5px 8px;
+					}
+					&:before{
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+			.pricingtable-bx{
+				small{
+					margin-left: 0;
+					margin-right: 8px;
+				}
+			}
+			.btn{
+				&:after{
+					left:auto;
+					right:0;
+				}
+			}
+		}
+		
+		&.style-4{
+			.pricingtable-inner{
+				text-align: right;
+				
+				.pricingtable-features{
+					li {
+						text-align: right;
+					}
+				}
+			}
+		}
+
+		&.style-5{
+			text-align: right;
+			
+			.pricingtable-inner{
+				text-align: right;
+			
+				.pricingtable-head{
+					.pricingtable-price{
+						.pricingtable-bx{
+							small{
+								margin-left: 0;
+								margin-right: 5px;
+							}
+						}
+					}
+				}
+			}
+			.pricingtable-features i{
+				float: right;
+				margin-left: 5px;
+			}
+		}
+	}
+}
