@@ -4,6 +4,10 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\StoresController;
+use App\Http\Controllers\AlertController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +22,16 @@ use App\Http\Controllers\Admin\LanguageController;
 Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
 	Route::get('/', [DashboardController::class, 'dashboard']);
 	Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+});
+Route::middleware(['auth:sanctum', 'verified', 'permissions'])->prefix('admin')->group(function () {
+    Route::get('/stores', [StoresController::class, 'index'])->name('admin.stores.index');
+    Route::get('/stores/syncStores', [StoresController::class, 'syncStores'])->name('admin.stores.syncStores'); //for stores sync
+    Route::get('/stores/syncPrice', [StoresController::class, 'syncPrice'])->name('admin.stores.syncPrice'); //for stores sync
+    Route::post('/alerts', [AlertController::class, 'store'])->name('alert.store');
+
+
+
+
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'permissions'])->prefix('admin')->group(function () {

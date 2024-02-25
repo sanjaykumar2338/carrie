@@ -17,7 +17,7 @@ class PermissionsController extends Controller
      */
     public function index()
     {
-        $page_title = __('common.all_permissions'); 
+        $page_title = __('common.all_permissions');
         $roles = Role::all();
         $modulesPermissions = TempPermission::where('parent_id', '=', 0)->whereIn('type', ['App', 'Module'])->get();
 
@@ -44,6 +44,7 @@ class PermissionsController extends Controller
         $page_title = __('common.role_permissions');
         $role = Role::findorFail($role_id);
         $permissions = Permission::pluck('id', 'action')->toArray();
+
         $allPermissionCount = Permission::all()->count();
         $rolePermissionCount = DB::table('role_has_permissions')->where('role_id', '=', $role_id)->get()->count();
         return view('admin.permissions.role_permissions', compact('role', 'permissions', 'allPermissionCount', 'rolePermissionCount','page_title'));
@@ -57,13 +58,15 @@ class PermissionsController extends Controller
         $page_title = __('common.roles_permissions');
         $roles = Role::all();
         $permissions = Permission::pluck('id', 'action')->toArray();
+        //echo "<pre>";print_r($permissions);die;
         $allPermissionCount = Permission::all()->count();
 
         $modulesPermissions = TempPermission::where('parent_id', '=', 0)->whereIn('type', ['App', 'Module'])->get();
-
+        //echo "<pre>";
         $modulePermissions = $tempPermissions = array();
         foreach ($modulesPermissions as $modulesPermissionkey => $modulesPermission) {
             $controllerPermissions = $this->get_child_id($modulesPermission->id, 'Controller');
+            //print_r($controllerPermissions);
             foreach($controllerPermissions as $controllerPermission)
             {
                 $actionPermissions = TempPermission::where('parent_id', '=', $controllerPermission->id)->whereIn('type', ['Action'])->get();
@@ -73,7 +76,7 @@ class PermissionsController extends Controller
             $modulePermissions[$modulePermissionsName] = $tempPermissions;
             $tempPermissions = array();
         }
-
+        //die;
         return view('admin.permissions.roles_permissions', compact('roles', 'permissions', 'allPermissionCount', 'modulePermissions','page_title'));
     }
 
@@ -127,7 +130,7 @@ class PermissionsController extends Controller
         $role = Role::findorFail($role_id);
         $rolePermissionCount = DB::table('role_has_permissions')->where('role_id', '=', $role_id)->get()->count();
         $allPermissionCount = Permission::all()->count();
-        
+
         if(!empty($role)) {
 
             if($rolePermissionCount == $allPermissionCount) {
@@ -139,7 +142,7 @@ class PermissionsController extends Controller
                 $role->syncPermissions($permissions);
                 $status = true;
             }
-        
+
         }
 
         if($status)
@@ -163,7 +166,7 @@ class PermissionsController extends Controller
         $status = false;
         $role = Role::findorFail($role_id);
         $rolePermissionCount = DB::table('role_has_permissions')->where('role_id', '=', $role_id)->where('permission_id', '=', $permission_id)->get()->count();
-        
+
         if(!empty($role)) {
 
             if($rolePermissionCount > 0) {
@@ -175,7 +178,7 @@ class PermissionsController extends Controller
                 $role->givePermissionTo($permissions);
                 $status = true;
             }
-        
+
         }
 
         if($status)
@@ -202,7 +205,7 @@ class PermissionsController extends Controller
         $status = false;
         $user = User::findorFail($user_id);
         $userPermission = DB::table('model_has_permissions')->where($whereCondition)->first();
-        
+
         if(!empty($user)) {
 
             if(!empty($userPermission)) {
@@ -218,7 +221,7 @@ class PermissionsController extends Controller
                 $user->givePermissionTo($permissions);
                 $status = true;
             }
-        
+
         }
 
         if($status)
@@ -265,11 +268,11 @@ class PermissionsController extends Controller
         $user = User::findorFail($user_id);
         $permissions = Permission::all();
         $userPermissions = $user->getDirectPermissions();
-        if(!$userPermissions->isEmpty()) 
+        if(!$userPermissions->isEmpty())
         {
             $status = $user->revokePermissionTo($userPermissions);
-        } 
-        else 
+        }
+        else
         {
             $status = $user->givePermissionTo($permissions);
         }
@@ -339,7 +342,7 @@ class PermissionsController extends Controller
                 }
                 if($value->type != $type)
                 {
-                    return self::get_child_id($value->id, $type);       
+                    return self::get_child_id($value->id, $type);
                 }
                 else
                 {
@@ -353,7 +356,7 @@ class PermissionsController extends Controller
 
     public function add_to_permissions()
     {
-        
+
         $modulesPermissions = TempPermission::where('parent_id', '=', 0)->whereIn('type', ['App', 'Module'])->get();
         $i = $j = 0;
         $message = __('common.nothing_to_added');
@@ -388,7 +391,7 @@ class PermissionsController extends Controller
 
     public function generate_permissions()
     {
-        
+
         foreach (\Route::getRoutes()->getRoutes() as $route)
         {
             $routeActionList = $route->getAction();
@@ -399,7 +402,7 @@ class PermissionsController extends Controller
                 $fullPath = $routeActionList['controller'];
                 if(\Str::contains($routeActionList['controller'], 'App\Http\\') > 0)
                 {
-                    $controllerPath = str_replace('App\Http\\', '', $routeActionList['controller']);    
+                    $controllerPath = str_replace('App\Http\\', '', $routeActionList['controller']);
                     $controllerPath = explode('\\', $controllerPath);
                     $endKey = 0;
                     $parent_id=0;
@@ -410,12 +413,12 @@ class PermissionsController extends Controller
                         $type = "App";
                         for($i=0; $i<$endKey; $i++)
                         {
-                            $parentFolder = $controllerPath[$i];  
-                            $temp_permission = TempPermission::where('name', '=', $parentFolder)->where('type', '=', 'App')->first();   
+                            $parentFolder = $controllerPath[$i];
+                            $temp_permission = TempPermission::where('name', '=', $parentFolder)->where('type', '=', 'App')->first();
                             if($temp_permission)
                             {
                                 $parent_id = $temp_permission->id;
-                            }   
+                            }
                             else{
                                 $parent_id = TempPermission::insertGetId([
                                     'parent_id' => $parent_id,
@@ -424,20 +427,20 @@ class PermissionsController extends Controller
                                     'type' => 'App'
                                 ]);
                             }
-                        }       
+                        }
                     }
-                    
+
                     $controller_action = explode('@', $controllerPath[$endKey]);
                     $controller_path = explode('@', $routeActionList['controller'])[0];
                     $controller = $controller_action[0];
-                    
-                    $check_controller = TempPermission::where('name', '=', $controller_path)->where('type', '=', 'Controller')->first();    
+
+                    $check_controller = TempPermission::where('name', '=', $controller_path)->where('type', '=', 'Controller')->first();
 
                     if($check_controller)
                     {
                         $parent_id = $check_controller->id;
-                    } 
-                    else 
+                    }
+                    else
                     {
                         $parent_id = TempPermission::insertGetId([
                                         'parent_id' => $parent_id,
@@ -466,12 +469,12 @@ class PermissionsController extends Controller
                                         ]);
                         }
                     }
-                    
+
                 }
 
                 if(\Str::contains($routeActionList['controller'], 'Modules\\') > 0)
                 {
-                    $controllerPath = str_replace('Modules\\', '', $routeActionList['controller']); 
+                    $controllerPath = str_replace('Modules\\', '', $routeActionList['controller']);
                     $controllerPath = explode('\\',$controllerPath);
                     $endKey = 0;
                     $parent_id=0;
@@ -482,14 +485,14 @@ class PermissionsController extends Controller
                         $type = "App";
                         for($i=0; $i<$endKey; $i++)
                         {
-                            $parentFolder = $controllerPath[$i];  
+                            $parentFolder = $controllerPath[$i];
 
-                            $temp_permission = TempPermission::where('name', '=', $parentFolder.' '.$parent_id)->where('type', '=', 'Module')->first(); 
-                            
+                            $temp_permission = TempPermission::where('name', '=', $parentFolder.' '.$parent_id)->where('type', '=', 'Module')->first();
+
                             if($temp_permission)
                             {
                                 $parent_id = $temp_permission->id;
-                            }   
+                            }
                             else
                             {
                                 $parent_id = TempPermission::insertGetId([
@@ -499,20 +502,20 @@ class PermissionsController extends Controller
                                     'type' => 'Module'
                                 ]);
                             }
-                        }       
+                        }
                     }
-                    
+
                     $controller_action = explode('@', $controllerPath[$endKey]);
                     $controller_path = explode('@', $routeActionList['controller'])[0];
                     $controller = $controller_action[0];
 
-                    $check_controller = TempPermission::where('name', '=', $controller_path)->where('type', '=', 'Controller')->first();    
+                    $check_controller = TempPermission::where('name', '=', $controller_path)->where('type', '=', 'Controller')->first();
 
                     if($check_controller)
                     {
                         $parent_id = $check_controller->id;
-                    } 
-                    else 
+                    }
+                    else
                     {
                         $parent_id = TempPermission::insertGetId([
                                         'parent_id' => $parent_id,
@@ -524,7 +527,7 @@ class PermissionsController extends Controller
                     }
                     $action = $controller_action[1];
 
-                    $check_action = TempPermission::where('name', '=', $action)->where('parent_id', '=', $parent_id)->where('type', '=', 'Action')->first();    
+                    $check_action = TempPermission::where('name', '=', $action)->where('parent_id', '=', $parent_id)->where('type', '=', 'Action')->first();
 
                     if(!$check_action)
                     {
@@ -538,9 +541,9 @@ class PermissionsController extends Controller
                                     ]);
                     }
 
-                    
-                }               
-                
+
+                }
+
             }
         }
         return redirect()->back()->with('success', __('common.temp_permissions_add_success'));
@@ -556,7 +559,7 @@ class PermissionsController extends Controller
         {
             $viewFile = 'admin.permissions.ajax.role_permission_by_action';
         }
-        return view($viewFile, compact('permission_id', 'roles'));      
+        return view($viewFile, compact('permission_id', 'roles'));
     }
 
     public function get_users_by_role(Request $request)
@@ -575,7 +578,7 @@ class PermissionsController extends Controller
     {
         $permission_id  = $request->input('permission_id');
         $user_id        = $request->input('user_id');
-        
+
         return view('admin.permissions.ajax.get_permission_by_user', compact('permission_id', 'user_id'));
     }
 }

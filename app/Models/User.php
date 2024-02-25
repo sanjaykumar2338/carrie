@@ -11,6 +11,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Model\Alert;
 
 class User extends Authenticatable
 {
@@ -35,13 +36,17 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    public function alerts()
+    {
+        return $this->hasMany(Alert::class);
+    }
     protected $hidden = [
         'password',
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
     ];
-    
+
     /**
      * The attributes that should be cast.
      *
@@ -55,7 +60,7 @@ class User extends Authenticatable
     public function getFullNameAttribute($value) {
         return "{$this->first_name} {$this->last_name}";
     }
-    
+
     ########### Model RelationShip Functions Starts ###########
 
     public function blog()
@@ -69,7 +74,7 @@ class User extends Authenticatable
     }
 
     /*
-    * Params-> model_class, table_name, foreign_key, local_key 
+    * Params-> model_class, table_name, foreign_key, local_key
     */
     public static function get_roles($user_id)
     {
@@ -79,7 +84,7 @@ class User extends Authenticatable
     }
 
     ########### Model RelationShip Functions End ###########
-    
+
 
     public function getCreatedAtAttribute( $value ) {
         $dateFormat = config('Site.custom_date_format').' '.config('Site.custom_time_format');
@@ -89,5 +94,5 @@ class User extends Authenticatable
     public function setCreatedAtAttribute( $value ) {
         $this->attributes['created_at'] = (new Carbon($value))->format('Y-m-d H:i:s');
     }
-    
+
 }

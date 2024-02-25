@@ -52,13 +52,13 @@
                                                 <label class="permission-switch">
                                                     <input type="checkbox" class="bulkActionRoleCheckbox" rdx-link="{{ route('admin.permissions.manage-role-all-permissions', ['id'=>$role->id] )}}" checked="checked" data-role-id="{{ $role->id }}">
                                                     <span class="permission-switch-slider"></span>
-                                                </label> 
+                                                </label>
                                                 <span class="ms-2">({{ __('common.allow/deny_all_permissions') }})</span>
                                             @else
                                                 <label class="permission-switch">
                                                     <input type="checkbox" class="bulkActionRoleCheckbox" rdx-link="{{ route('admin.permissions.manage-role-all-permissions', ['id'=>$role->id] )}}" data-role-id="{{ $role->id }}">
                                                     <span class="permission-switch-slider"></span>
-                                                </label> 
+                                                </label>
                                                 <span class="ms-2">({{ __('common.allow/deny_all_permissions') }})</span>
                                             @endif
 
@@ -83,11 +83,14 @@
 
     <div class="row">
 
-        @php 
-            $permissions_list = config('permission.acl.action_list'); 
+        @php
+            $permissions_list = config('permission.acl.action_list');
+
             $i = 1;
         @endphp
-
+        <?php
+            ///echo "<pre>";print_r($modulePermissions); die;
+        ?>
         @foreach($modulePermissions as $moduleKey => $modulePermission)
 
             <div class="col-xl-12">
@@ -99,7 +102,7 @@
                     </div>
 
                     <div class="card-body accordion__body collapse" id="collapse-{{ $moduleKey }}" data-bs-parent="#accordion-{{ $moduleKey }}">
-                        
+
                         @forelse($modulePermission as $controllerKey => $controller)
 
                             <div id="accordion-{{ $moduleKey }}-{{ $i }}" class="accordion accordion-bordered accordion-primary custom-accordion">
@@ -149,7 +152,7 @@
                                                         @endforelse
 
                                                     </tr>
-                                                    
+
                                                     @empty
                                                         <tr>
                                                             <td>
@@ -179,7 +182,7 @@
 
         @endforeach
 
-        
+
     </div>
 
 </div>
